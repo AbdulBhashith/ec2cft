@@ -21,7 +21,7 @@ Resources:
       EnableDnsHostnames: true
       Tags:
         - Key: Name
-          Value: m2VPC
+          Value: m4VPC
 
   # Internet Gateway
   InternetGateway:
@@ -29,7 +29,7 @@ Resources:
     Properties:
       Tags:
         - Key: Name
-          Value: m2InternetGateway
+          Value: m4InternetGateway
 
   AttachGateway:
     Type: AWS::EC2::VPCGatewayAttachment
@@ -47,7 +47,7 @@ Resources:
       AvailabilityZone: !Select [ 0, !GetAZs '' ]
       Tags:
         - Key: Name
-          Value: m2PublicSubnet
+          Value: m4PublicSubnet
 
   # Route Table
   PublicRouteTable:
@@ -56,7 +56,7 @@ Resources:
       VpcId: !Ref VPC
       Tags:
         - Key: Name
-          Value: m2PublicRouteTable
+          Value: m4PublicRouteTable
 
   PublicRoute:
     Type: AWS::EC2::Route
@@ -108,7 +108,7 @@ Resources:
           echo "<html><body><h1>Hi This is Ram</h1></body></html>" > /usr/share/nginx/html/index.html
       Tags:
         - Key: Name
-          Value: m2EC2Instance
+          Value: m4EC2Instance
 
 Outputs:
   InstanceId:
